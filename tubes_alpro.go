@@ -76,10 +76,10 @@ func cariProyekSequential() {
 	var kata string
 	fmt.Print("Masukkan nama proyek atau klien: ")
 	fmt.Scanln(&kata)
-	for _, p := range daftar {
-		if p.Nama == kata || p.Klien == kata {
+	for i := 0; i < len(daftar); i++ {
+		if daftar[i].Nama == kata || daftar[i].Klien == kata {
 			fmt.Printf("ID: %d, Nama: %s, Klien: %s, Deadline: %d hari, Bayaran: %d, Status: %s\n",
-				p.ID, p.Nama, p.Klien, p.Deadline, p.Bayaran, p.Status)
+				daftar[i].ID, daftar[i].Nama, daftar[i].Klien, daftar[i].Deadline, daftar[i].Bayaran, daftar[i].Status)
 			return
 		}
 	}
@@ -160,11 +160,11 @@ func urutkanBayaranInsertionSort() {
 }
 
 func tampilkanLaporan() {
-	var p Proyek
 	fmt.Println("\nLaporan Proyek:")
-	for _, p = range daftar {
+	for i := 0; i < len(daftar); i++ {
 		fmt.Printf("ID: %d, Nama: %s | Klien: %s | Deadline: %d | Bayaran: %d | Status: %s\n",
-			p.ID, p.Nama, p.Klien, p.Deadline, p.Bayaran, p.Status)
+			daftar[i].ID, daftar[i].Nama, daftar[i].Klien,
+			daftar[i].Deadline, daftar[i].Bayaran, daftar[i].Status)
 	}
 }
 
